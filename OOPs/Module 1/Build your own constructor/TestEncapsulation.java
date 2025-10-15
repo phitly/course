@@ -1,5 +1,5 @@
 // TestEncapsulation class to test the Employee class
-public class TestEncapsulation {
+public class TestEncapsulation {   
     public static void main(String[] args) {
         // Step 1: Create two instances of the Employee class
         // One using the parameterized constructor and one using default constructor with setters
@@ -22,6 +22,7 @@ public class TestEncapsulation {
             System.out.println("Validation error: " + e.getMessage());  // where is the getMessage() method defined?
             // It is defined in the Throwable class, which is the superclass of all exceptions
             // so it auto defined in all exception classes? 
+            System.out.println();
 
         }
 
@@ -29,12 +30,14 @@ public class TestEncapsulation {
             employee2.setAge(70);
         } catch (IllegalArgumentException e) {
             System.out.println("Validation error: " + e.getMessage());
+            System.out.println();
         }
 
         try {
             employee1.setSalary(-1000);
         } catch (IllegalArgumentException e) {
             System.out.println("Validation error: " + e.getMessage());
+            System.out.println();
         }
 
         // Step 4: Give both employees a 10% raise and display their details again
@@ -51,6 +54,7 @@ public class TestEncapsulation {
             clonedEmployee.displayDetails();
         } catch (CloneNotSupportedException e) {
             System.out.println("Cloning not supported");
+            System.out.println();
         }
 
         // Step 6: Modify the original employee and verify that the clone remains unchanged
@@ -65,6 +69,7 @@ public class TestEncapsulation {
             clonedEmployee2.displayDetails();
         } catch (CloneNotSupportedException e) {
             System.out.println("Cloning not supported");
+            System.out.println();
         }
 
         // Step 7: Create a method that compares the salaries of two employees

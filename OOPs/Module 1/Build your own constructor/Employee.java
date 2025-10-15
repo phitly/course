@@ -89,6 +89,7 @@ public class Employee implements Cloneable {
         System.out.println("Age: " + this.age);
         System.out.println("Monthly Salary: " + this.salary);
         System.out.println("Annual Salary: " + calculateAnnualSalary());
+        System.out.println();
     }
     // Step 8: Override the clone method to make Employee objects cloneable
     // Hint: @Override protected Object clone() throws CloneNotSupportedException
