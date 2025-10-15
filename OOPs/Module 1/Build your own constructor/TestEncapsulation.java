@@ -9,14 +9,20 @@ public class TestEncapsulation {
         employee2.setAge(25);
         employee2.setSalary(4000);
         // Step 2: Print details of both employees
-        employee1.displayEmployeeDetails();
-        employee2.displayEmployeeDetails(); 
+        employee1.displayDetails(); 
+        employee2.displayDetails();
         // Step 3: Try setting invalid values (null name, age outside range, negative salary)
         // and see if your validation works
+        // explain the try setting invalid values
+        // Using try-catch blocks to handle potential IllegalArgumentExceptions
+
         try {
             employee1.setName(null);
-        } catch (IllegalArgumentException e) {
-            System.out.println("Validation error: " + e.getMessage());
+        } catch (IllegalArgumentException e) {  //what is e here?  // e is the exception object that contains information about the error
+            System.out.println("Validation error: " + e.getMessage());  // where is the getMessage() method defined?
+            // It is defined in the Throwable class, which is the superclass of all exceptions
+            // so it auto defined in all exception classes? 
+
         }
 
         try {
@@ -34,15 +40,15 @@ public class TestEncapsulation {
         // Step 4: Give both employees a 10% raise and display their details again
         employee1.giveRaise(10);
         employee2.giveRaise(10);
-        employee1.displayEmployeeDetails();
-        employee2.displayEmployeeDetails();
+        employee1.displayDetails();
+        employee2.displayDetails();
 
         // Step 5: Clone the first employee and display the cloned employee details
         // Hint: Use try-catch block to handle CloneNotSupportedException
         try {
             Employee clonedEmployee = (Employee) employee1.clone();
             System.out.println("Cloned Employee Details:");
-            clonedEmployee.displayEmployeeDetails();
+            clonedEmployee.displayDetails();
         } catch (CloneNotSupportedException e) {
             System.out.println("Cloning not supported");
         }
@@ -52,11 +58,11 @@ public class TestEncapsulation {
         employee1.setName("Alice Smith");
         employee1.setSalary(6000);
         System.out.println("Original Employee Details After Modification:");
-        employee1.displayEmployeeDetails();
+        employee1.displayDetails();
         System.out.println("Cloned Employee Details After Original Modification:");
         try {
             Employee clonedEmployee2 = (Employee) employee1.clone();
-            clonedEmployee2.displayEmployeeDetails();
+            clonedEmployee2.displayDetails();
         } catch (CloneNotSupportedException e) {
             System.out.println("Cloning not supported");
         }

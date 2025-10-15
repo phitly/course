@@ -84,7 +84,7 @@ public class Employee implements Cloneable {
         // why are we using void? i thought we are returning name, age, monthly salary, and annual salary?
         // because we are printing the details to the console, not returning them
         // if we were to return them, we would use a different return type, such as String
-    public void displayEmployeeDetails(){
+    public void displayDetails(){
         System.out.println("Name: " + this.name);
         System.out.println("Age: " + this.age);
         System.out.println("Monthly Salary: " + this.salary);
