@@ -28,7 +28,7 @@
         }
         // why are we not creating getter for year?
         // because year is protected, so it can be accessed directly in subclass
-        
+    }
     
 // Step 2: Create an interface Tunable
 // This should include:
@@ -218,18 +218,27 @@ public class MusicShop {
         instruments[2] = new Guitar("Gibson Les Paul", 2019, 6, "Acoustic");
 
         // Iterate through array and call play() for each instrument
+        // is this polymorphism? 
+            // yes, polymorphism allows us to treat different object types uniformly
+                // here we call play() on each Instrument reference
+                    // but the actual method executed depends on the object's real type (Guitar or Piano)
         for (Instrument instrument : instruments) {
             System.out.println(instrument.play());
             System.out.println(instrument.getInstrumentDetails());
             
-            // Test if instrument is Tunable
+            // explain this code: 
+                // we check if the instrument implements Tunable interface
+                    // if it does, we cast it to Tunable type and call its methods
             if (instrument instanceof Tunable) {
                 Tunable tunableInstrument = (Tunable) instrument;
                 System.out.println(tunableInstrument.tune());
                 System.out.println(tunableInstrument.adjustPitch(true));
             }
             
+
             // Test if instrument is Maintainable
+                // if it does, we cast it to Maintainable type and call its methods
+
             if (instrument instanceof Maintainable) {
                 Maintainable maintainableInstrument = (Maintainable) instrument;
                 System.out.println(maintainableInstrument.clean());
